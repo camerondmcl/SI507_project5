@@ -1,0 +1,12 @@
+<ul>
+{% for studio in all_studios %}
+<li><h4>Films produced by {{ studio[0] }}:</h4>{% for movie in studio[1] %}<li>{{ movie }}{% endfor %}</li></li><br>
+{% endfor %}
+</ul>
+
+{% if not all_studios %}
+There are no saved studios to show.
+{% endif %}
+
+
+<a href="{{ url_for('index')}}">Return to home page</a>

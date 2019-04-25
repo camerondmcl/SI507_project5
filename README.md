@@ -2,13 +2,13 @@
 
 Cameron McLaughlin
 
-[Link to this repository](https://github.com/camerondmcl/SI507_project5)
+[Link to GitHub repository](https://github.com/camerondmcl/SI507_project5)
 
 ---
 
 ## Project Description
 
-This project takes data about films from the OMDB API and puts it into a SQLAlchemy database. It uses Flask to display information in a web browser and accept user input to add film data.
+This project takes data about films from the OMDB API and puts it into a SQLAlchemy database. It uses Flask to display information in a web browser and accept user input to add film data. A sample movies.db is included, but if you wish to start from a clean database you can simply delete, move or rename the file and a new blank one will automatically be created.
 
 ## How to run
 
@@ -24,7 +24,9 @@ This project takes data about films from the OMDB API and puts it into a SQLAlch
 3. You can optionally add the year of release to narrow down results (particularly helpful in cases where there are multiple films with very similar or identical titles, such as 'Titanic' (1997) and 'Titanic' (1953)). The search will still run normally without this parameter and it is not necessary for more specific titles such as 'Pulp Fiction'.
 4. Hit 'Submit' when you are ready to run the search. If your search did not return any results, nothing will be added to the database and you will be given the opportunity to run another search or return to the homepage. Otherwise, the first result will automatically be added to the database if it was not yet saved in it. If it was already in the database, a duplicate will not be added.
 5. The homepage will display the number of films that are currently stored in the database. From here, you can click 'View all films', 'View all directors', and 'View all studios'.
-(Optional): Markdown syntax to include an screenshot/image: ![alt text](image.jpg)
+6. On the 'View all films' page, it will show a list of all films stored in the database with thumbnails of their posters and all data stored about each one.
+7. On 'View all directors', there will be a list of all directors stored in the database and each of their films with release years.
+8. On 'View all studios', there will be a list of all studios stored in the database and each of the films released by them with release years and directors.
 
 ## Routes in this application
 - `/` -> the homepage, displaying the number of films saved in the database and with links to add a film and to view all films, directors, and studios
@@ -36,9 +38,17 @@ This project takes data about films from the OMDB API and puts it into a SQLAlch
 
 ## How to run tests
 1. Navigate to the SI507project_tests.py file in Terminal
-2. Run the file
+2. Run the file. If everything returns as 'ok' the tests all passed.
 
 ## In this repository:
+- database-diagram.JPG
+- movies.db
+- movies_cache.sqlite
+- README.md
+- requirements.txt
+- SI507_project5.py
+- SI507project_tests.py
+- SI507project_tools.py
 - templates
   - add_movie.html
   - all_directors.html
@@ -46,14 +56,6 @@ This project takes data about films from the OMDB API and puts it into a SQLAlch
   - all_studios.html
   - index.html
   - new_movie.html
-- SI507_project5.py
-- SI507project_tests.py
-- SI507project_tools.py
-- movies.db
-- movies_cache.sqlite
-- README.md
-- requirements.txt
-- database-diagram.JPG [currently reusing diagram from project 3 because it will be almost the same, but I will most likely add/change a couple things for the Movies table and will update the diagram accordingly]
 
 ---
 ## Code Requirements for Grading
@@ -66,12 +68,12 @@ Below is a list of the requirements listed in the rubric for you to copy and pas
 ### General
 - [x] Project is submitted as a Github repository
 - [x] Project includes a working Flask application that runs locally on a computer
-- [ ] Project includes at least 1 test suite file with reasonable tests in it.
+- [x] Project includes at least 1 test suite file with reasonable tests in it.
 - [x] Includes a `requirements.txt` file containing all required modules to run program
-- [ ] Includes a clear and readable README.md that follows this template
+- [x] Includes a clear and readable README.md that follows this template
 - [x] Includes a sample .sqlite/.db file
 - [ ] Includes a diagram of your database schema
-- [ ] Includes EVERY file needed in order to run the project
+- [x] Includes EVERY file needed in order to run the project
 - [ ] Includes screenshots and/or clear descriptions of what your project should look like when it is working
 
 ### Flask Application
@@ -97,5 +99,5 @@ Below is a list of the requirements listed in the rubric for you to copy and pas
 - [x] Caching of data you continually retrieve from the internet in some way
 
 ### Submission
-- [ ] I included a link to my GitHub repository with the correct permissions on Canvas! (Did you though? Did you actually? Are you sure you didn't forget?)
-- [ ] I included a summary of my project and how I thought it went **in my Canvas submission**!
+- [x] I included a link to my GitHub repository with the correct permissions on Canvas! (Did you though? Did you actually? Are you sure you didn't forget?)
+- [x] I included a summary of my project and how I thought it went **in my Canvas submission**!

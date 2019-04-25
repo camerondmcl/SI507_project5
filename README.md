@@ -19,14 +19,15 @@ This project takes data about films from the OMDB API and puts it into a SQLAlch
 
 ## How to use
 
-1. Click 'Add a film' on the homepage. ![How the homepage should looks](homepage.png)
-2. Type in the title of the film you would like to add. Your search term does not have to match the title exactly, but the closer it is to how the title is written on IMDB, the more likely you are to get the result you are looking for, and any misspellings will likely result in no film being added. (add page: https://imgur.com/bPst441)
-3. You can optionally add the year of release to narrow down results (particularly helpful in cases where there are multiple films with very similar or identical titles, such as 'Titanic' (1997) and 'Titanic' (1953)). The search will still run normally without this parameter and it is not necessary for more specific titles such as 'Pulp Fiction'. (the message you should get if the film was added: https://imgur.com/bOVQk3k)
-4. Hit 'Submit' when you are ready to run the search. If your search did not return any results, nothing will be added to the database and you will be given the opportunity to run another search or return to the homepage. Otherwise, the first result will automatically be added to the database if it was not yet saved in it. If it was already in the database, a duplicate will not be added.
-5. The homepage will display the number of films that are currently stored in the database. From here, you can click 'View all films', 'View all directors', and 'View all studios'.
-6. On the 'View all films' page, it will show a list of all films stored in the database with thumbnails of their posters and all data stored about each one.
-7. On 'View all directors', there will be a list of all directors stored in the database and each of their films with release years.
-8. On 'View all studios', there will be a list of all studios stored in the database and each of the films released by them with release years and directors.
+1. Click 'Add a film' on the homepage.
+2. Type in the title of the film you would like to add. Your search term does not have to match the title exactly, but the closer it is to how the title is written on IMDB, the more likely you are to get the result you are looking for, and any misspellings will likely result in no film being added. ![Add film page:](add_film.png)
+3. You can optionally add the year of release to narrow down results (particularly helpful in cases where there are multiple films with very similar or identical titles, such as 'Titanic' (1997) and 'Titanic' (1953)). The search will still run normally without this parameter and it is not necessary for more specific titles such as 'Pulp Fiction'.
+4. Hit 'Submit' when you are ready to run the search. If your search did not return any results, nothing will be added to the database and you will be given the opportunity to run another search or return to the homepage. Otherwise, the first result will automatically be added to the database if it was not yet saved in it. If it was already in the database, a duplicate will not be added. ![If film was added:](film_added.png) ![If film already existed:](film_already.png) ![If search did not return any results:](no_result.png)
+5. The homepage will display the number of films that are currently stored in the database. From here, you can click 'View all films', 'View all directors', and 'View all studios'.  ![How the homepage should look:](homepage.png)
+6. On the 'View all films' page, it will show a list of all films stored in the database with thumbnails of their posters and all data stored about each one. ![All movies page:](all_films.png)
+7. On 'View all directors', there will be a list of all directors stored in the database and each of their films with release years. ![All directors page:](all_directors.png)
+8. On 'View all studios', there will be a list of all studios stored in the database and each of the films released by them with release years and directors. ![All studios page:](all_studios.png)
+9. If you wish, you can view the movies.db file in a SQLite browser. ![Sample movies table:](movies_table.png) ![Sample directors table:](directors_table.png) ![Sample studios table:](studios_table.png)
 
 ## Routes in this application
 - `/` -> the homepage, displaying the number of films saved in the database and with links to add a film and to view all films, directors, and studios
@@ -41,14 +42,25 @@ This project takes data about films from the OMDB API and puts it into a SQLAlch
 2. Run the file. If everything returns as 'ok' the tests all passed.
 
 ## In this repository:
+- add_film.png
+- all_directors.png
+- all_films.png
+- all_studios.png
 - database-diagram.JPG
+- directors_table.png
+- film_added.png
+- film_already.png
+- homepage.png
 - movies.db
 - movies_cache.sqlite
+- movies_table.png
+- no_result.png
 - README.md
 - requirements.txt
 - SI507_project5.py
 - SI507project_tests.py
 - SI507project_tools.py
+- studios_table.png
 - templates
   - add_movie.html
   - all_directors.html
@@ -74,7 +86,7 @@ Below is a list of the requirements listed in the rubric for you to copy and pas
 - [x] Includes a sample .sqlite/.db file
 - [x] Includes a diagram of your database schema
 - [x] Includes EVERY file needed in order to run the project
-- [ ] Includes screenshots and/or clear descriptions of what your project should look like when it is working
+- [x] Includes screenshots and/or clear descriptions of what your project should look like when it is working
 
 ### Flask Application
 - [x] Includes at least 3 different routes

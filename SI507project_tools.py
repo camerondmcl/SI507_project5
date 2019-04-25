@@ -79,13 +79,7 @@ def get_info(movie_dict):
 def make_new_movie(movie_dict):
     # print(movie_dict)
     new_movie = Movie(title=movie_dict['Title'], year=int(movie_dict['Year']), genre=movie_dict['Genre'], score=movie_dict['imdbRating'], rating=movie_dict['Rated'], poster_url=movie_dict['Poster'], director_id=get_director(movie_dict['Director']).id, studio_id=get_studio(movie_dict['Production']).id)
-    movie = Movie.query.filter_by(title=new_movie.title).first()
-    if movie:
-        return new_movie
-    else:
-        session.add(new_movie)
-        session.commit()
-        return new_movie
+    return new_movie
 
 def add_new_movie(new_movie):
     movie_same_title = Movie.query.filter_by(title=new_movie.title,director_id=new_movie.director_id).first()
@@ -104,6 +98,26 @@ def add_new_movie(new_movie):
         session.commit()
         print('movie added')
         return ' has been added to the database.'
+
+# def make_add_movie(movie_dict):
+#     # print(movie_dict)
+#     new_movie = Movie(title=movie_dict['Title'], year=int(movie_dict['Year']), genre=movie_dict['Genre'], score=movie_dict['imdbRating'], rating=movie_dict['Rated'], poster_url=movie_dict['Poster'], director_id=get_director(movie_dict['Director']).id, studio_id=get_studio(movie_dict['Production']).id)
+#     movie_same_title = Movie.query.filter_by(title=new_movie.title,director_id=new_movie.director_id).first()
+#     print(movie_same_title)
+#     if movie_same_title:
+#         if new_movie.director_id == movie_same_title.director_id:
+#             print('movie already exists')
+#             return ' already exists in the database.'
+#         else:
+#             session.add(new_movie)
+#             session.commit()
+#             print('movie added')
+#             return ' has been added to the database.'
+#     else:
+#         session.add(new_movie)
+#         session.commit()
+#         print('movie added')
+#         return ' has been added to the database.'
 
 def request_and_process_data(base_url, params_dict):
     response = requests.get(base_url, params_dict)

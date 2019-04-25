@@ -19,9 +19,9 @@ This project takes data about films from the OMDB API and puts it into a SQLAlch
 
 ## How to use
 
-1. Click 'Add a film' on the homepage.
-2. Type in the title of the film you would like to add. Your search term does not have to match the title exactly, but the closer it is to how the title is written on IMDB, the more likely you are to get the result you are looking for, and any misspellings will likely result in no film being added.
-3. You can optionally add the year of release to narrow down results (particularly helpful in cases where there are multiple films with very similar or identical titles, such as 'Titanic' (1997) and 'Titanic' (1953)). The search will still run normally without this parameter and it is not necessary for more specific titles such as 'Pulp Fiction'.
+1. Click 'Add a film' on the homepage. ![How the homepage should looks](homepage.png)
+2. Type in the title of the film you would like to add. Your search term does not have to match the title exactly, but the closer it is to how the title is written on IMDB, the more likely you are to get the result you are looking for, and any misspellings will likely result in no film being added. (add page: https://imgur.com/bPst441)
+3. You can optionally add the year of release to narrow down results (particularly helpful in cases where there are multiple films with very similar or identical titles, such as 'Titanic' (1997) and 'Titanic' (1953)). The search will still run normally without this parameter and it is not necessary for more specific titles such as 'Pulp Fiction'. (the message you should get if the film was added: https://imgur.com/bOVQk3k)
 4. Hit 'Submit' when you are ready to run the search. If your search did not return any results, nothing will be added to the database and you will be given the opportunity to run another search or return to the homepage. Otherwise, the first result will automatically be added to the database if it was not yet saved in it. If it was already in the database, a duplicate will not be added.
 5. The homepage will display the number of films that are currently stored in the database. From here, you can click 'View all films', 'View all directors', and 'View all studios'.
 6. On the 'View all films' page, it will show a list of all films stored in the database with thumbnails of their posters and all data stored about each one.
@@ -72,7 +72,7 @@ Below is a list of the requirements listed in the rubric for you to copy and pas
 - [x] Includes a `requirements.txt` file containing all required modules to run program
 - [x] Includes a clear and readable README.md that follows this template
 - [x] Includes a sample .sqlite/.db file
-- [ ] Includes a diagram of your database schema
+- [x] Includes a diagram of your database schema
 - [x] Includes EVERY file needed in order to run the project
 - [ ] Includes screenshots and/or clear descriptions of what your project should look like when it is working
 

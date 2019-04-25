@@ -1,6 +1,6 @@
 <ul>
 {% for movie in all_movies %}
-<li>{{ movie[0] }} directed by {{ movie[1] }} - produced by {{ movie[2] }}</li><br>
+<li><img src="{{ movie[0] }}" height="100"><br><b><i>{{ movie[1] }}</i></b> ({{ movie[2] }}), directed by {{ movie[3] }} and produced by {{ movie[4] }}.<br>IMDB score: {{ movie[5] }}. MPAA rating: {{ movie[6] }}. Genre(s): {{ movie[7] }}.</li><br>
 {% endfor %}
 </ul>
 
@@ -9,4 +9,4 @@ There are no saved  films to show.
 {% endif %}
 
 
-<a href="{{ url_for('index')}}">Return to home page</a>
+<a href="/">Return to home page</a>

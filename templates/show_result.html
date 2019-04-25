@@ -1,0 +1,12 @@
+<h3>API request result:</h3>
+
+{{ movie_data }}<br><br>
+<br>
+Add film to database?<br>
+<h2>{{ title }}</h2>
+<form action="/add_movie" method='GET'>
+  <input type="text" name="title" value={{ title }} style="display: none;">
+  <input type="text" name="year" value={{ year }} style="display: none;">
+  <input type="submit" value="Add to database">
+</form>
+<a href="/">Return to home</a>

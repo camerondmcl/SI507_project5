@@ -1,3 +1,4 @@
+<h1>All films:</h1>
 <ul>
 {% for movie in all_movies %}
 <li><img src="{{ movie[0] }}" height="100"><br><b><i>{{ movie[1] }}</i></b> ({{ movie[2] }}), directed by {{ movie[3] }} and produced by {{ movie[4] }}.<br>IMDB score: {{ movie[5] }}. MPAA rating: {{ movie[6] }}. Genre(s): {{ movie[7] }}.</li><br>

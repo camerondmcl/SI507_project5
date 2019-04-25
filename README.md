@@ -13,20 +13,26 @@ This project takes data about films from the OMDB API and puts it into a SQLAlch
 ## How to run
 
 1. Set up a virtual environments and install all required modules from the included `requirements.txt`.
-2. Run the `SI507_project5.py` file from Terminal.
-3. Ideally you will be able to operate the Flask application entirely by typing into forms and clicking links/buttons on the webpage, without the need to type anything into the URL bar, but this will depend on whether I am actually able to make that work or not, since I have never tried anything nearly that complex with Flask before.
+2. Run the `SI507_project5.py` file from the command line.
+3. Open the Flask application in a web browser using the supplied address.
+4. From here, you can operate the program entirely through the browser window.
 
 ## How to use
 
-1. A useful instruction goes here
-2. A useful second step here
-3. (Optional): Markdown syntax to include an screenshot/image: ![alt text](image.jpg)
+1. Click 'Add a film' on the homepage.
+2. Type in the title of the film you would like to add. Your search term does not have to match the title exactly, but the closer it is to how the title is written on IMDB, the more likely you are to get the result you are looking for, and any misspellings will likely result in no film being added.
+3. You can optionally add the year of release to narrow down results (particularly helpful in cases where there are multiple films with very similar or identical titles, such as 'Titanic' (1997) and 'Titanic' (1953)). The search will still run normally without this parameter and it is not necessary for more specific titles such as 'Pulp Fiction'.
+4. Hit 'Submit' when you are ready to run the search. If your search did not return any results, nothing will be added to the database and you will be given the opportunity to run another search or return to the homepage. Otherwise, the first result will automatically be added to the database if it was not yet saved in it. If it was already in the database, a duplicate will not be added.
+5. The homepage will display the number of films that are currently stored in the database. From here, you can click 'View all films', 'View all directors', and 'View all studios'.
+(Optional): Markdown syntax to include an screenshot/image: ![alt text](image.jpg)
 
 ## Routes in this application
-- `/` -> this will be the homepage, which will hopefully have links to each of the other routes as well as a link to a page to add data; each other page will also have a link back to the homepage
-- `/movies/all` -> this route will display data for all of the films currently stored in the database
-- `/directors/movies` -> this route will display all of the directors currently stored in the database and the films they have directed
-- `/directors/studios` -> this route will display all of the directors currently stored in the database and the studios they have worked with
+- `/` -> the homepage, displaying the number of films saved in the database and with links to add a film and to view all films, directors, and studios
+- `/new_movie` -> contains an HTML form where the user can enter the title and (optionally) release year of a film to run a search and add the first result to the database, as well as a link back to the homepage
+- `/add_movie` -> route on accessible after performing a search; displays the results of the search and whether the film was added to the database or already existed (or says the search had no results and gives the option to search again) and has a link back to the homepage
+- `/all_movies` -> displays data for all films in the database in bulleted format, with a thumbnail of the poster; has a link back to home
+- `/all_directors` -> displays all directors stored in the database in bulleted format with each of the films they directed and their release years underneath their names; has a link back to home
+- `/all_studios` -> displays all studios stored in the database in bulleted format with each of the films they released and their release years and directors underneath; has a link back to home
 
 ## How to run tests
 1. Navigate to the SI507project_tests.py file in Terminal
@@ -34,13 +40,17 @@ This project takes data about films from the OMDB API and puts it into a SQLAlch
 
 ## In this repository:
 - templates
+  - add_movie.html
+  - all_directors.html
+  - all_movies.html
+  - all_studios.html
   - index.html
-  - movies_all.html
-  - [unknown what/how many templates there will be]
+  - new_movie.html
 - SI507_project5.py
 - SI507project_tests.py
 - SI507project_tools.py
-- movies_data.db
+- movies.db
+- movies_cache.sqlite
 - README.md
 - requirements.txt
 - database-diagram.JPG [currently reusing diagram from project 3 because it will be almost the same, but I will most likely add/change a couple things for the Movies table and will update the diagram accordingly]
@@ -54,7 +64,7 @@ Please check the requirements you have accomplished in your code as demonstrated
 Below is a list of the requirements listed in the rubric for you to copy and paste.  See rubric on Canvas for more details.
 
 ### General
-- [ ] Project is submitted as a Github repository
+- [x] Project is submitted as a Github repository
 - [x] Project includes a working Flask application that runs locally on a computer
 - [ ] Project includes at least 1 test suite file with reasonable tests in it.
 - [x] Includes a `requirements.txt` file containing all required modules to run program

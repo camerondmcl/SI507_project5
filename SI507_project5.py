@@ -71,13 +71,16 @@ def add_movie():
         request_dict = {'t':request.args.get('t', ''), 'y':request.args.get('y', ''), 'apikey':API_KEY}
         response = request_and_process_data(BASE_URL, request_dict)
         # return str(response)
-        movie = make_new_movie(response)
-        added = add_new_movie(movie)
+        try:
+            movie = make_new_movie(response)
+            added = add_new_movie(movie)
         # if result == 0:
         #     added = ' has been added to the database.'
         # else:
         #     added = ' already exists in the database.'
-        return render_template('add_movie.html', movie_data=get_info(response), added=added)
+            return render_template('add_movie.html', movie_data=get_info(response), added=added)
+        except:
+            return 'Your search did not match any results.<br><br><a href="/new_movie">Run another search</a><br><br><a href="/">Return to home</a>'
 
 @app.route('/all_movies')
 def all_movies():
@@ -124,7 +127,8 @@ def all_studios():
         movies = Movie.query.all()
         for movie in movies:
             if new_studio[0] == Studio.query.filter_by(id=movie.studio_id).first().name:
-                movie_and_year = movie.title + ', ' + str(movie.year)
+                director_name = Director.query.filter_by(id=movie.director_id).first().name
+                movie_and_year = movie.title + ' (' + str(movie.year) + '), directed by ' + director_name
                 studios_movies.append(movie_and_year)
         new_studio.append(studios_movies)
         studios_lst.append(new_studio)
